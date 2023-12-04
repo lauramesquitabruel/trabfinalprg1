@@ -106,6 +106,12 @@ public class Main {
                 j1.jogada(matriz, carta1_escolha);
             }
             rodada++;
-        }    
+        }
+        Jogador vencedor = Jogo.vencedor(j1, j2, j3);
+        if(vencedor != null){
+            System.out.println(vencedor.nome + ", parabéns! Você ganhou!");  
+        } else {
+            System.out.println("Não houve vencedores!");
+        }   
     }
 }
