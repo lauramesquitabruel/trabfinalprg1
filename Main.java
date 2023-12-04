@@ -77,57 +77,45 @@ public class Main {
                 j1.jogada(matriz, carta1_escolha);
                 j2.jogada(matriz, carta2_escolha);
                 j3.jogada(matriz, carta3_escolha);
-                Tabuleiro.imprimirTabuleiro(matriz);
-                System.out.println(j1.nome + " pontos: " + j1.pontos);
-                System.out.println(j2.nome + " pontos: " + j2.pontos);
-                System.out.println(j3.nome + " pontos: " + j3.pontos);
+                
             }
                 
             if(ordemDeJogada.primeiro == j1 && ordemDeJogada.segundo == j3 && ordemDeJogada.terceiro == j2){
                 j1.jogada(matriz, carta1_escolha);
                 j3.jogada(matriz, carta3_escolha);
                 j2.jogada(matriz, carta2_escolha);
-                Tabuleiro.imprimirTabuleiro(matriz);
-                System.out.println(j1.nome + " pontos: " + j1.pontos);
-                System.out.println(j2.nome + " pontos: " + j2.pontos);
-                System.out.println(j3.nome + " pontos: " + j3.pontos);
+                
             }
             if(ordemDeJogada.primeiro == j2 && ordemDeJogada.segundo == j1 && ordemDeJogada.terceiro == j3){
                 j2.jogada(matriz, carta2_escolha);
                 j1.jogada(matriz, carta1_escolha);
                 j3.jogada(matriz, carta3_escolha);
-                Tabuleiro.imprimirTabuleiro(matriz);
-                System.out.println(j1.nome + " pontos: " + j1.pontos);
-                System.out.println(j2.nome + " pontos: " + j2.pontos);
-                System.out.println(j3.nome + " pontos: " + j3.pontos);
+                
             }
             if(ordemDeJogada.primeiro == j2 && ordemDeJogada.segundo == j3 && ordemDeJogada.terceiro == j1){
                 j2.jogada(matriz, carta2_escolha);
                 j3.jogada(matriz, carta3_escolha);
                 j1.jogada(matriz, carta1_escolha);
-                Tabuleiro.imprimirTabuleiro(matriz);
-                System.out.println(j1.nome + " pontos: " + j1.pontos);
-                System.out.println(j2.nome + " pontos: " + j2.pontos);
-                System.out.println(j3.nome + " pontos: " + j3.pontos);
+                
             }
             if(ordemDeJogada.primeiro == j3 && ordemDeJogada.segundo == j1 && ordemDeJogada.terceiro == j2){
                 j3.jogada(matriz, carta3_escolha);
                 j1.jogada(matriz, carta1_escolha);
                 j2.jogada(matriz, carta2_escolha);
-                Tabuleiro.imprimirTabuleiro(matriz);
-                System.out.println(j1.nome + " pontos: " + j1.pontos);
-                System.out.println(j2.nome + " pontos: " + j2.pontos);
-                System.out.println(j3.nome + " pontos: " + j3.pontos);
+                
             }
             if(ordemDeJogada.primeiro == j3 && ordemDeJogada.segundo == j2 && ordemDeJogada.terceiro == j1){
                 j3.jogada(matriz, carta3_escolha);
                 j2.jogada(matriz, carta2_escolha);
                 j1.jogada(matriz, carta1_escolha);
-                Tabuleiro.imprimirTabuleiro(matriz);
-                System.out.println(j1.nome + " pontos: " + j1.pontos);
-                System.out.println(j2.nome + " pontos: " + j2.pontos);
-                System.out.println(j3.nome + " pontos: " + j3.pontos);
+                
             }
+            
+            Tabuleiro.imprimirTabuleiro(matriz);
+            System.out.println(j1.nome + " pontos: " + j1.pontos);
+            System.out.println(j2.nome + " pontos: " + j2.pontos);
+            System.out.println(j3.nome + " pontos: " + j3.pontos);
+            
             rodada++;
         }
         Jogador vencedor = Jogo.vencedor(j1, j2, j3);
