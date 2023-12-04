@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Jogo {
 
     public static Jogadores ordemJogada(Carta c1, Jogador j1, Carta c2, Jogador j2, Carta c3, Jogador j3){
@@ -29,13 +31,14 @@ public class Jogo {
 
     }
 
-    public static Integer cartaDaRodada(int lista[]){
-        int c_escolhida = 0;
-        for(int num : lista){
-            if(num > c_escolhida){
-                c_escolhida = num;
+    public static Integer cartaDaRodada(ArrayList<Integer> lista) {
+        int cEscolhida = 0;
+
+        for (int num : lista) {
+            if (num > cEscolhida) {
+                cEscolhida = num;
             }
         }
-        return c_escolhida;
+        return cEscolhida;
     }
 }

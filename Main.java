@@ -5,6 +5,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Carta[][] matriz = new Carta[5][5];
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o nome do jogador 1: ");
+        String nome_j1 = sc.nextLine();
+        System.out.println("Digite o nome do jogador 2: ");
+        String nome_j2 = sc.nextLine();
+        System.out.println("Digite o nome do jogador 3: ");
+        String nome_j3 = sc.nextLine();
+
+
         Baralho baralho = new Baralho();
         for (int n =1; n <= 109; n++){
             int valorExtra = 0;
@@ -27,7 +36,7 @@ public class Main {
         }
         baralho.embaralhar();
 
-        Jogador j1 = new Jogador(1); Jogador j2 = new Jogador(2); Jogador j3 = new Jogador(3);
+        Jogador j1 = new Jogador(nome_j1); Jogador j2 = new Jogador(nome_j2); Jogador j3 = new Jogador(nome_j3);
 
         for(int i = 0; i < 12; i++){
             Carta carta_nova = baralho.pescar();
@@ -42,7 +51,6 @@ public class Main {
         Tabuleiro.preencherPrimeiraColunaMatriz(matriz, baralho);
         Tabuleiro.imprimirTabuleiro(matriz);
 
-        Scanner sc = new Scanner(System.in);
         int rodada = 0;
         while(rodada < 12){
             j1.imprimirMao();
