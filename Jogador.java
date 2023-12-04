@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Jogador {
-    int nome;
+    String nome;
     int pontos;
     ArrayList<Carta> maoJogador;
 
-    public Jogador(int nome){
+    public Jogador(String nome){
         this.maoJogador = new ArrayList<>();
         this.pontos = 0;
         this.nome = nome;
@@ -17,7 +17,6 @@ public class Jogador {
             Carta carta = maoJogador.get(i);
             System.out.print(carta.numero);
             
-            // Adiciona vírgula se não for a última carta
             if (i < maoJogador.size() - 1) {
                 System.out.print(", ");
             }
@@ -57,11 +56,27 @@ public class Jogador {
             for(int i = 0; i<5; i++){
                 for(int r = 0; r<5; r++){
                     if(matriz[i][r].numero == cartaDaRodada1){
-                    matriz[i][r+1] = carta_escolha;
+                        if(r+1 < 5){
+                            matriz[i][r+1] = carta_escolha;
+                        } else {
+                            int pontos = 0;
+                            int linha = i;
+                            for(int coluna = 0; coluna < 5; coluna++){
+                                pontos = pontos + matriz[linha][coluna].valor;
+                                Carta c = new Carta(0, 0);
+                                matriz[linha][coluna] = c;
+                                if(coluna == 0){
+                                    matriz[linha][coluna] = carta_escolha;
+                                } 
+                            }
+                            this.pontos = pontos;
+                        }
                     }
                 }
             }
+        
         Tabuleiro.imprimirTabuleiro(matriz);
+        System.out.println(this.nome + "pontos: " + this.pontos);
         maoJogador.remove(carta_escolha);
         return matriz;
 
