@@ -43,13 +43,13 @@ public class Jogo {
     }
 
     public static Jogador vencedor(Jogador j1, Jogador j2, Jogador j3){
-        if(j1.pontos > j2.pontos && j1.pontos > j3.pontos){
+        if(j1.pontos < j2.pontos && j1.pontos < j3.pontos){
             return j1;
         }
-        if(j2.pontos > j1.pontos && j2.pontos > j3.pontos){
+        if(j2.pontos < j1.pontos && j2.pontos < j3.pontos){
             return j2;
         }
-        if(j3.pontos > j2.pontos && j3.pontos > j1.pontos){
+        if(j3.pontos < j2.pontos && j3.pontos < j1.pontos){
             return j3;
         }
         return null;

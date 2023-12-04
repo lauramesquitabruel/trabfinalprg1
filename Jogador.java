@@ -54,7 +54,6 @@ public class Jogador {
 
         if (!cartasMenores.isEmpty()) {
             int cartaDaRodada1 = Jogo.cartaDaRodada(cartasMenores);
-            System.out.println("Carta da Rodada: " + cartaDaRodada1);
 
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 5; j++) {
