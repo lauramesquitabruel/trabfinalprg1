@@ -13,7 +13,7 @@ public class Jogador {
     }
 
     public void imprimirMao() {
-        System.out.print("<");
+        System.out.print(this.nome + ": <");
         for (int i = 0; i < maoJogador.size(); i++) {
             Carta carta = maoJogador.get(i);
             System.out.print(carta.numero);
@@ -46,7 +46,6 @@ public class Jogador {
             for(int j = 0; j < 5; j++){
                 if(matriz[i][j].numero < carta_escolha.numero && matriz[i][j].numero > 0){
                     cartasMenores.add(matriz[i][j].numero);
-                    System.out.println("Foi adicionada à lista de cartas menores: " + matriz[i][j].numero);
                 }
             }
         }
@@ -83,10 +82,11 @@ public class Jogador {
             int linhaMaiorNumero = 0;
 
             for (int i = 0; i < 5; i++) {
-                int ultimoNumero = matriz[i][4].numero;
-                if (ultimoNumero > maiorNumero) {
-                    maiorNumero = ultimoNumero;
-                    linhaMaiorNumero = i;
+                for (int j = 0; j < 5; j++){
+                    if (matriz[i][j].numero > maiorNumero){
+                        maiorNumero = matriz[i][j].numero;
+                        linhaMaiorNumero = i;
+                    }
                 }
             }
 
@@ -101,8 +101,6 @@ public class Jogador {
             this.pontos += pontos;
         }
 
-        Tabuleiro.imprimirTabuleiro(matriz);
-        System.out.println(this.nome + " pontos: " + this.pontos);
         maoJogador.remove(carta_escolha);
 
         return matriz;
